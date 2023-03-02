@@ -2,7 +2,7 @@
 
 namespace SharpAvi.Utilities
 {
-    internal static partial class BitmapUtils
+    public static partial class BitmapUtils
     {
 #if NET5_0_OR_GREATER
         public static unsafe void Bgr32ToBgr24(ReadOnlySpan<byte> source, Span<byte> destination, int pixelCount)
@@ -55,7 +55,7 @@ namespace SharpAvi.Utilities
         }
 
 #if NET5_0_OR_GREATER
-        public static void FlipVertical(ReadOnlySpan<byte> source, Span<byte> destination, int height, int stride)
+        internal static void FlipVertical(ReadOnlySpan<byte> source, Span<byte> destination, int height, int stride)
         {
             Argument.IsPositive(height, nameof(height));
             Argument.IsPositive(stride, nameof(stride));
